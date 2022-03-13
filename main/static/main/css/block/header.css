@@ -1,0 +1,145 @@
+.header {
+    margin: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+    background-color: #202020;
+    padding: 0  40px;
+    left: 0;
+    font-family: 'Oswald', sans-serif;
+    top: 0;
+}
+* {
+    box-sizing: border-box;
+}
+.header__log {
+    display: flex;
+    align-items: center;
+}
+.header__log:hover  .header__logotip{
+    animation-name:  roti;
+    animation-duration: 8000ms;
+    animation-iteration-count: infinite;
+    animation-fill-mode: .2s;
+    padding: 0 2px;
+}
+
+
+@keyframes roti {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+
+.header-name {
+    padding: 0 10px;
+    font-weight: 600;
+    opacity: 1;
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 28px;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+}
+.header__logotip img {
+    width: 40px;
+}
+
+.header__button {
+    text-decoration: none;
+    color: aliceblue;
+    padding: 16px 10px;
+    transition: background-color .3s linear, color .3s linear;
+    opacity: .8;
+    font-size: 22px;
+    margin: 0;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+}
+.header__button:hover{
+    background-color: 		#FFD700;
+    opacity: 1;
+    box-shadow: 3px 3px 3px black;
+    color: #202020;
+    font-weight: 600;
+    margin: 0;
+}
+.header__mob {
+    display: none;
+    color: aliceblue;
+}
+.header__close {
+    display: none;
+}
+
+@media screen and (max-width: 1140px) {
+    .header {
+        justify-content: space-between;
+        height: 70px;
+        width: 100%;
+        padding: 0;
+    }
+    .header__mob {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        right: 10px;
+    }   
+    .header__flex {
+        display: flex;
+        flex-direction: column;
+        background-color: #202020;
+        width: 100%;
+        position: absolute;
+        z-index: 99;
+        left: 0;
+        top: -360px;
+        padding: 0;
+        margin: 0;
+        box-shadow: 0px 5px 5px black;
+        transition: top .4s linear;
+    }
+    .header__button {
+        width: 100%;
+        border: 1px solid aliceblue;
+        display: block;
+        text-align: center;
+        margin: 0;
+        padding: 14px 0;
+        background-color: #202020;
+        text-transform: uppercase;
+    }
+    .pinki {
+        font-size: 48px !important;
+    }
+    .header__name {
+        font-size: 30px;
+    }
+.header__logotip img {
+        width: 60px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .header {
+        justify-content: space-between;
+        height: 80px;
+        width: 100%;
+        
+    }
+}

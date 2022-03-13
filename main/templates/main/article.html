@@ -1,0 +1,31 @@
+{% extends "main/base.html" %} 
+
+{% block title %} {{ title }} {% endblock %}
+
+
+<article>
+    {% block content %}
+    <div class = "page">
+        <div class = "page__back">
+
+        {% for i in lection %}
+            <div class = "post">
+                <div class = "post__header">
+                    <div class = "post__name">{{ i.title }}</div>
+                    <div class = "article__footer">
+                            <div class = "article__tegi">
+                                <a href = ""> {{ i.teg }} </a>
+                            </div>
+                        <div class = "article__data"> {{ i.data }} </div>
+                        </div>
+                </div>
+                <p>
+                    {{i.text}}
+                </p>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+    {% endblock %}
+</article>

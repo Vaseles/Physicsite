@@ -1,0 +1,42 @@
+{% extends "main/base.html" %} 
+
+{% block title %}
+ {{ title }}
+{% endblock %}
+
+{% block translate %}
+<div class = "translate">
+	<a class = "translate__button" href = "practise" >RU</a>
+	<a class = "translate__button"  href = "practisekz">KZ</a>
+</div>
+{% endblock %}
+
+
+{% block tasks %}
+
+<div class = "bod">
+  <div class = "page">
+    <div class = "page__back">
+      
+      <div class = "page__name">Молекулярная физика</div>
+      <div class = "page__content">
+        {% if task %}
+          {% for i in task %}
+          <div class = "article">
+            <a class = "article__name">{{ i.title }}</a>
+            <div class = "article__footer">
+                <div class = "article__tegi">
+                    <a href = "">{{ i.tags  }}</a>
+                </div>
+                <div class = "article__data">{{ i.data }}</div>
+            </div>
+        </div>
+  {% endfor  %}
+  {% else %}
+    <div class = "category__else">Здесь нет записей</div>
+  {% endif %}
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
