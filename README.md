@@ -12,3 +12,5 @@ rus - version
 list page(lection, laborator works, task, faq, examen)
 
 ![image](https://user-images.githubusercontent.com/82625479/158072127-76532a3d-0b60-49dc-a0d0-7a4645b1aad6.png)
+
+support doesnt work becose i want it.
