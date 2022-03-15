@@ -14,4 +14,6 @@ urlpatterns = [
     path("labworkskz",views.laborator, name = "labworkskz"),
      # страница с заданиями
      path("practisekz", views.practise, name = "practisekz"),
+     path("articlekz",views.article, name = "articlekz" ),
+     path("labseekz", views.labsee, name = "labseekz"),
 ]

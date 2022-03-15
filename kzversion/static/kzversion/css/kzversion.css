@@ -6,6 +6,7 @@
 @import "blocks/footer.css";
 @import "blocks/category.css";
 @import "blocks/article.css";
+@import "blocks/pag.css";
 
 
 
@@ -33,4 +34,22 @@ a {
   display: block;
   padding: 0 10px;
   color: burlywood;
+}
+
+/*pag */
+.page {
+  width: 100%;
+  padding: 6% 10%;
+  margin-bottom: 30px;
+}
+.page__back {
+  background-color: #282828;
+  padding: 50px 100px;
+  box-shadow: 5px 5px 10px black;
+}
+.page__name {
+  display: block;
+  text-align: center;
+  padding-bottom: 40px;
+  font-size: 30px;
 }

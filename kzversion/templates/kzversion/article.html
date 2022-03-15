@@ -1,0 +1,42 @@
+{% extends "kzversion/base.html" %}
+
+{% block title %} {{ title }} {% endblock %}
+
+
+<article>
+    {% block content %}
+
+        {% for i in lection %}
+            <div class = "page">
+                <div class = "page__back">
+                    <a class = "article__name"  >{{ i.name }}</a>
+                    <div class  = "article__description">{{ i.text }}</div>
+                    <div class = "article__footer">
+                        <div class = "article__tegi">
+                            <a href = "">{{ i.category  }}</a>
+                        </div>
+                        <div class = "article__data">{{ i.data }}</div>
+                    </div>
+                </div>
+                <style>
+                    .page {
+                        width: 100%;
+                        padding: 6% 10%;
+                        margin-bottom: 30px;
+                    }
+                    .page__back {
+                        background-color: #282828;
+                        padding: 50px 100px;
+                        box-shadow: 5px 5px 10px black;
+                     }
+                     .page__name {
+                        display: block;
+                        text-align: center;
+                        padding-bottom: 40px;
+                        font-size: 30px;
+                     }
+                    </style>
+            </div>
+         {% endfor %}
+    {% endblock %}
+</article>
