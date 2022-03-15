@@ -9,8 +9,11 @@ def index(request):
 
 def staties(request):
     lections = lection.objects.all()
-    return render(request,"main/lection.html", {"title": "Лекции", "lection": lections , "lectionkz": "kzversion/lection.html"})
+    return render(request,"main/lection.html", {"title": "Лекции", "lection": lections , "lectionkz": "kzversion/lection.html", "seelection": "article.html"})
 
+def article(request):
+    lections = lection.objects.all()
+    return render(request,"main/article.html", {"title": "Статья", "lection": lections })
 
 def practise(request):
     tasks = task.objects.all()
@@ -20,6 +23,10 @@ def labworks(request):
     laborators = laborator.objects.all()
     return render( request, "main/labworks.html",  {"title": "Лабораторные работы", "laborators": laborators, "labworkskz": "kzversion/labwork.html"} )
 
+def labsee(request):
+    laborators = laborator.objects.all()
+    return render( request, "main/labsee.html",  {"title": "Лабораторная работа", "laborators": laborators })
+
 def exem(request):
     examens = examen.objects.all()
     return render( request, "main/exem.html", {"title": "Экзамены", "examen": examens,"examenkz": "kzversion/exem.html" })
@@ -27,7 +34,5 @@ def exem(request):
 def faq(request):
     return render( request, "main/faq.html",{"faqkz": "kzversion/faq.html" })
 
-def lection_url(request, title):
-    args = { }
-    args["article"] = get_object_or_404(lection)
-    return render(request, "", args)
+
+# def text(request):

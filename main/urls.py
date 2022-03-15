@@ -16,5 +16,6 @@ urlpatterns = [
     path("exem",views.exem, name = "exem"),
      # страница с вопросами
     path("faq",views.faq, name = "faq"),
-    path("<id>/", views.lection_url, name = "lect"),
+    path("article",views.article, name = "article" ),
+    path("labsee", views.labsee, name = "labsee"),
 ]

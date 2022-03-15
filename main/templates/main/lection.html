@@ -16,15 +16,15 @@
     <div class = "category__title">Молекулярная Физика</div>
     <div class = "category__item">
         
-    {% for i in lection %}
+    {% for m in lection %}
         <div class = "article">
-            <a class = "article__name">{{ i.title }}</a>
-            <div class  = "article__description">{{ i.description }}</div>
+            <a class = "article__name"  href = "article" >{{ m.title }}</a>
+            <div class  = "article__description">{{ m.description }}</div>
             <div class = "article__footer">
                 <div class = "article__tegi">
-                    <a href = "">{{ i.tags  }}</a>
+                    <a href = "">{{ m.category  }}</a>
                 </div>
-                <div class = "article__data">{{ i.data }}</div>
+                <div class = "article__data">{{ m.data }}</div>
             </div>
         </div>
         {% endfor %}

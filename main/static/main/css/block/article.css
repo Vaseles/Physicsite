@@ -50,10 +50,20 @@
 .article__name  {
 	font-size: 28px;
 }
+.article__name--dop {
+	font-size: 36px;
+}
 .article__description {
 	padding: 10px 0 0;
 	font-size: 22px;
 	opacity: .9;
+}
+.article__description--special {
+	font-size: 26px;
+}
+.article__description--span {
+	font-weight: 500;
+	font-size: 30px;
 }
 .article__data {
 	font-size: 18px;
@@ -76,7 +86,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	
+	margin: 30px 0;
 }
 
 @media screen and (max-width: 600px) {
