@@ -1,5 +1,5 @@
 # Physicsite
-Raw, unfinished, second Django project. If you see it, know that I do not vouch for your life. Will I complete the project? NO. Why? There was little experience, there was little time, the idea itself and the topic were not interesting. The only thing, I will add is automatically added pages when creating a new article in the admin panel. This project has more unnecessary code.
+Raw, unfinished, second Django project. If you see it, know that I do not vouch for your life. Will I complete the project? NO. Why? There was little experience, there was little time, the idea itself and the topic were not interesting. This project has more unnecessary code.
 
 home page screen
 kaz - version
