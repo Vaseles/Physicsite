@@ -1,0 +1,230 @@
+<header class="header">
+    <div class="header__log" >
+        <div class="header__logotip header__spechial"><img src="" class=""></div>
+        <a href='/' class="header-name">Физика</a>
+    </div>
+    <div class="header__menu">
+        <div class="header__inside" id="menu">
+            <a class="header__button" href="{% url 'base:lections' %}">Лекции</a>
+            <a class="header__button" href="{% url 'base:labworks' %}">Лабораторные работы</a>
+            <a class="header__button" href="">Практические работы</a>
+            <a class="header__button" href="">Экзаменационный материал</a>
+            <!-- <a class = "header__button" href = "#" >Формулы</a> -->
+        </div>
+        
+        <div class="header__mob">
+            <div class="header__open" id="openMenu" onclick="open__menu()"><span class="material-icons  md-48 menu pinki">menu</span></div>
+            <div class="header__close" onclick="close__menu()" id="closeMenu">
+                <span class="material-icons  md-48 menu pinki">close</span>
+            </div>
+        </div>
+    </div>
+    <div class="header__create">
+        <button class="header__span create" >+</button>
+    </div>
+</header>
+
+<div class="header__creat">
+    <a href="{% url 'base:create-lection' %}" class = "create-a">Создать Лекцию</a>
+    <a href="{% url 'base:create-labwork' %}" class = "create-a">Создать Лабораторную Работу</a>
+    <a href="" class = "create-a">Создать Тест/Задания</a>
+    <a href="" class = "create-a">Добавить Экзаменационное Задание</a>
+</div>
+.
+
+<style>
+    .header__creat {
+        position: fixed;
+        bottom: 0;
+        z-index: 1000;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: rgb(27 27 27);
+        padding: 1%;
+        display: none;
+    }
+    .create-a {
+        padding: .8% 2%;
+        margin: .2% .4%;
+        background-color: rgb(254,254,254,.1);
+        border-radius: 1rem;
+        box-shadow: 1px 1px 5px black;
+    }
+    .create-a:hover {
+        background-color: #FFD700;
+        color: #202020
+    }
+    .header {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top:0;
+        z-index: 100;
+        background-color: rgb(27 27 27);
+        padding: 0  2%;
+    }
+    .header__log {
+        display: flex;
+        align-items: center;
+        
+    }
+    .header__log:hover  .header__logotip{
+        animation-name:  roti;
+        animation-duration: 8000ms;
+        animation-iteration-count: infinite;
+        animation-fill-mode: .2s;
+        padding: 0 2px;
+    }
+    
+    button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-size: 1.8rem;
+        color: aliceblue;
+    }
+    
+    @keyframes roti {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    
+    
+    .header-name {
+        padding: 0 10px;
+        font-weight: 600;
+        color: aliceblue;
+        text-decoration: none;
+    }
+    .header__logotip img {
+        width: 40px;
+    }
+    .header__menu {
+        display: flex;
+        justify-content: center;
+    }
+    .header__button {
+        text-decoration: none;
+        padding: 18px 8px;
+        font-size: 17px;
+        font-family: 600;
+        color: rgb(254,254,254,.7);
+        font-weight:600;
+        margin: 0;
+    }
+    .header__button:hover{
+        background-color: #FFD700;
+        color: #202020;
+        box-shadow: 1px 1px 10px black;
+    }
+    .header__mob {
+        display: none;
+    }
+    
+    .header__close {
+        display: none;
+    }
+    @media screen and (max-width: 1100px) {
+        .header {
+            justify-content: space-between;
+            height: 70px;
+            width: 100%;
+            padding: 0;
+        }
+        .header__mob {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            right: 10px;
+    }
+        .header__inside {
+            display: flex;
+            flex-direction: column;
+            background-color: #202020;
+            width: 100%;
+            position: absolute;
+            z-index: 99;
+            left: 0;
+            top: -360px;
+            padding: 0;
+            margin: 0;
+            box-shadow: 0px 5px 5px black;
+            transition: top .4s linear;
+        }
+        .header__button {
+            width: 100%;
+            border: 1px solid aliceblue;
+            display: block;
+            text-align: center;
+            margin: 0;
+            padding: 14px 0;
+            background-color: #202020;
+            text-transform: uppercase;
+        }
+        .pinki {
+            font-size: 48px !important;
+        }
+        .header__name {
+            font-size: 30px;
+    }
+    .header__logotip img {
+            width: 60px;
+        }
+    }
+    @media screen and (max-width: 400px) {
+        .header {
+            justify-content: space-between;
+            height: 80px;
+            width: 100%;
+            
+        }
+    }
+    .create {
+        font-weight: 800;
+        font-size: 1.6rem;
+    }
+</style>
+<script>
+//Переменные
+const closeMenu = document.getElementById("closeMenu");
+const openMenu = document.getElementById("openMenu");
+const menu = document.getElementById("menu");
+
+//______menu______
+//open
+const open__menu = () => {
+	closeMenu.style.display = "block";
+	openMenu.style.display = "none";
+	menu.style.top = "70px";
+};
+//close
+const close__menu = () => {
+	closeMenu.style.display = "none";
+	openMenu.style.display = "block";
+	menu.style.top = "-380px";
+}
+
+//menu for add posts
+const header__span = document.querySelector('.header__span');
+const header__creat = document.querySelector('.header__creat');
+
+header__span.addEventListener('click', () => {
+    if (header__creat.style.display == 'none') {
+        header__creat.style.display = 'flex';
+    } else {
+        header__creat.style.display = 'none';
+    }
+})
+
+</script>

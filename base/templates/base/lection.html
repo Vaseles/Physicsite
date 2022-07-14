@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+
+{% block title %}{% endblock title %}
+{% block content %}
+<div class="lection">
+  <div class="post">
+    <h2>{{article.title}}</h2>
+    <div class="article__text">{{article.text|linebreaks}}</div>
+    <div class="article__item">
+      <div class="article__tag">{{article.tag}}</div>
+      <p>{{article.updated}}</p>
+    </div>
+  </div>
+  <div class=""></div>
+</div>
+<style>
+  h2 {
+    font-size: 1.8rem !important;
+    margin: 2.4% 0 !important;
+  }
+</style>
+{% endblock content %}

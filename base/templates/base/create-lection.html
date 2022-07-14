@@ -1,0 +1,58 @@
+{% extends 'main.html' %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+<div class="pre__form">
+  <form action="" method="POST" class = "article" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.media}}
+    {{form.as_p}}
+    <input type="submit" value = "Опубликовать" class = "btn btn-min">
+  </form>
+</div>
+<style>
+  .pre__form {
+    margin-top: 100px;
+    padding: 0 5%;
+    max-width: 800px;
+    width: 100%;
+    min-width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 100%;
+    flex-direction: column;
+  }
+  input {
+    border: none;
+    border-bottom: 2px solid lightgray;
+  }
+  select, textarea, input {
+    background-color: transparent;
+    color: aliceblue;
+    padding: .5rem 1rem;
+    width: 100%;
+    margin: 2% 0;
+    outline: none;
+    font-size: 1.2rem;
+  }
+  option {
+    background-color: rgb(27 27 27);
+  }
+  textarea {
+    max-width: 100%;
+  }
+  .btn-min {
+    max-width: 200px !important;
+  }
+</style>
+{% endblock content %}

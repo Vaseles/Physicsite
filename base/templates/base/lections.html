@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+
+{% block title %}Лекции{% endblock title %}
+{% block content %}
+<article class="lections">
+    <div class="lections__tags">
+        <h2>Tags</h2>
+        <hr>
+        <a href = "{% url 'base:lections' %}" class='lection__tag'>All</a>
+        {% for tag in tags %}
+            <a class='lection__tag' href="{% url 'base:lections' %}?q={{tag}}">{{tag}}</a>
+        {% endfor %}
+    </div>
+    <div class="lections__posts">
+        {% for article in articles  %}
+            <div class="article">
+                <a href="{% url 'base:lection' article.id %}"><h2>{{article.title}}</h2></a>
+                <div class='article__text'>{{article.text|truncatewords:50}}</div>
+                <div class="article__item">
+                    <div class="article__tag">{{article.tag}}</div>
+                    <p>{{article.updated}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</article>
+{% endblock content %}
